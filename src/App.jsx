@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import FormInput from './components/FormInput';
+import styled from '@emotion/styled';
 
 const App = () => {
     const [values, setValues] = useState({
@@ -15,7 +16,7 @@ const App = () => {
     });
 
     const inputs = [
-      { id: 1, name: "firstname", type: "text", placeholder: "Enter first name", errorMessage: "Username should be 3-16 characters and shouldn't include any special character!", label: "First Name", pattern: "^[A-Za-z ]{3,16}$", required: true },
+      { id: 1, name: "firstname", type: "text", placeholder: "Enter first name", errorMessage: "Username should be 3-16 characters and shouldn't include any special character!", label: "First Name", pattern: "^[A-Za-z ]{3,16}$", required: true},
       { id: 8, name: "lastname", type: "text", placeholder: "Enter last name", errorMessage: "Username should be 3-16 characters and shouldn't include any special character!", label: "Last Name", pattern: "^[A-Za-z ]{3,16}$", required: true },
       { id: 2, name: "phone", type: "tel", placeholder: "Enter your number", errorMessage: "Phone number should be 10 digits!", label: "Phone", pattern: "^[0-9]{10}$", required: true },
       { id: 3, name: "email", type: "email", placeholder: "Enter your email", errorMessage: "It should be a valid email address!", label: "Email", required: true },
@@ -84,8 +85,8 @@ const App = () => {
 
     return (
       <div className="app">
-        <form onSubmit={handleSubmit}>
-          <h1>Student Register</h1>
+        <form className='main' onSubmit={handleSubmit}>
+          <h1>Student Register Form</h1>
           <div className="form-section">
             <div className="left-section">
               {inputs.slice(0, Math.ceil(inputs.length / 2)).map((input) => (
